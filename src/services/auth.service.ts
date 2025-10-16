@@ -4,7 +4,7 @@ import { loginSchema, registerSchema } from "@/entities/auth/schemas/auth.schema
 import { API_ROUTE } from "@/lib/routes/api.route";
 
 export const login = async (data: z.infer<typeof loginSchema>) => {
-    return api.post("http://localhost:9000/api/auth/login", data)
+    return api.post(API_ROUTE.auth.login(), data)
 }
 
 export const register = async (data: z.infer<typeof registerSchema>) => {
