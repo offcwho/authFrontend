@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Input } from "rdy-comp";
+import { RdyInput } from "rdy-comp";
 import Link from "next/link";
 
 import { useRegister } from "@/entities/auth/hooks/useRegister";
@@ -22,7 +22,7 @@ export const RegisterFormUi: React.FC<Props> = ({ className, loginUrl, label = '
             <form onSubmit={handleSubmit(onSubmit)} className="p-5 flex-1 grid gap-y-3">
                 <div className="items-center sm:text-3xl text-xl text-white font-medium text-center" id='form-headering'>{label}</div>
                 <div className="w-full grid gap-y-2 pt-5" id="form-group-1">
-                    <Input
+                    <RdyInput
                         {...register('name')}
                         label="Name"
                         id="name"
@@ -40,7 +40,7 @@ export const RegisterFormUi: React.FC<Props> = ({ className, loginUrl, label = '
                     />
                 </div>
                 <div className="w-full grid gap-y-2 pt-3" id="form-group-2">
-                    <Input
+                    <RdyInput
                         {...register('email')}
                         label="E-mail"
                         id="email"
@@ -58,7 +58,7 @@ export const RegisterFormUi: React.FC<Props> = ({ className, loginUrl, label = '
                     />
                 </div>
                 <div className="w-full grid gap-y-2 pt-3" id="form-group-3">
-                    <Input
+                    <RdyInput
                         {...register('password')}
                         label="Password"
                         id="password"
@@ -76,7 +76,7 @@ export const RegisterFormUi: React.FC<Props> = ({ className, loginUrl, label = '
                     />
                 </div>
                 <div className="w-full grid gap-y-2 pt-3" id="form-group-4">
-                    <Input
+                    <RdyInput
                         {...register('confirmPassword')}
                         label="Confirm Password"
                         id="confirmPassword"

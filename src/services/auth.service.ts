@@ -8,5 +8,5 @@ export const login = async (data: z.infer<typeof loginSchema>) => {
 }
 
 export const register = async (data: z.infer<typeof registerSchema>) => {
-    return api.post("http://localhost:9000/api/auth/register", data);
+    return api.post(API_ROUTE.auth.register(), data);
 }

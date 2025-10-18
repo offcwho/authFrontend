@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useLogin } from "@/entities/auth/hooks/useLogin";
 import { APP_ROUTE } from "@/lib/routes/app.route";
 
-import { Input } from "rdy-comp";
+import { RdyButton, RdyInput } from "rdy-comp";
 
 interface Props {
     className?: string;
@@ -22,7 +22,7 @@ export const loginFormUi: React.FC<Props> = ({ className, label }) => {
             <form onSubmit={handleSubmit(onSubmit)} className="p-5 flex-1 grid gap-y-4">
                 <div className="items-center sm:text-3xl text-xl text-white font-medium text-center" id='form-headering'>{label}</div>
                 <div className="w-full grid gap-y-2 pt-5" id="form-group-1">
-                    <Input
+                    <RdyInput
                         {...register('email')}
                         label="E-mail"
                         id="email"
@@ -40,7 +40,7 @@ export const loginFormUi: React.FC<Props> = ({ className, label }) => {
                     />
                 </div>
                 <div className="w-full grid gap-y-2 pt-3" id="form-group-2">
-                    <Input
+                    <RdyInput
                         {...register('password')}
                         label="Password"
                         id="password"
@@ -58,7 +58,7 @@ export const loginFormUi: React.FC<Props> = ({ className, label }) => {
                     />
                 </div>
                 <div className="pt-5 w-full grid gap-y-4" id="form-group-3">
-                    <button className="px-3 h-12 font-medium text-gray-500 bg-gray-100 rounded-full cursor-pointer">{isSubmitting ? "Ожидайте" : "Вход"}</button>
+                    <RdyButton>{isSubmitting ? "Ожидайте" : "Вход"}</RdyButton>
                     <Link href={String(APP_ROUTE.auth.register())} className="text-gray-400 transition-colors hover:text-white">Зарегистрироваться</Link>
                 </div>
             </form>
